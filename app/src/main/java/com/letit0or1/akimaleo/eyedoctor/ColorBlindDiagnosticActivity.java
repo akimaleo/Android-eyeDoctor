@@ -26,6 +26,63 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
     private SquareProgressBar mProgressBar;
     private TextView mDescriptionTest;
     private int milliseconds = 5000;
+    private int mCurrentSlide = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //displaying layout
+        setContentView(R.layout.activity_color_blind_diagnostic);
+
+        //get data
+        mDataSet = DataCollection.getInstance().getData();
+        //init progressbar
+        mProgressBar = (SquareProgressBar) findViewById(R.id.progressbar);
+        mDescriptionTest = (TextView) findViewById(R.id.textView);
+        //start diagnostic
+        startSlideshow();
+    }
+
+    void startSlideshow() {
+        //пример того, как должно выглядить тестирование
+        educationSet();
+        //shuffle collection for
+        Collections.shuffle(mDataSet);
+        mProgressBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mCurrentSlide == mDataSet.size()) {
+                    finish();
+                }
+                DataItem i = mDataSet.get(mCurrentSlide++);
+                mDescriptionTest.setText(i.getDescription());
+                mProgressBar.setImage(i.getImageResource());
+                mProgressBar.setProgress(((float)mCurrentSlide/ (float)mDataSet.size())*100);
+                Log.i("progress",((float)mCurrentSlide/ (float)mDataSet.size())*100+"%");
+
+            }
+        });
+    }
+
+    void educationSet() {
+        mProgressBar.setImage(mDataSet.get(0).getImageResource());
+        mDescriptionTest.setText(mDataSet.get(0).getDescription());
+    }
+/*animation
+* Animation fadeIn = new AlphaAnimation(0, 1);
+                fadeIn.setInterpolator(new DecelerateInterpolator()); //add this
+                fadeIn.setDuration(1000);
+
+                Animation fadeOut = new AlphaAnimation(1, 0);
+                fadeOut.setInterpolator(new AccelerateInterpolator()); //and this
+                fadeOut.setStartOffset(1000);
+                fadeOut.setDuration(1000);
+
+                AnimationSet animation = new AnimationSet(false); //change to false
+                animation.addAnimation(fadeIn);
+                animation.addAnimation(fadeOut);
+                mDescriptionTest.setAnimation(animation);*/
+
     //init timer thread
 //    private Thread timer = new Thread(new Runnable() {
 //        int currentImage = 0;
@@ -63,43 +120,4 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
 //    }
 //    );
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //displaying layout
-        setContentView(R.layout.activity_color_blind_diagnostic);
-
-        //get data
-        mDataSet = DataCollection.getInstance().getData();
-        //init progressbar
-        mProgressBar = (SquareProgressBar) findViewById(R.id.progressbar);
-        mDescriptionTest = (TextView) findViewById(R.id.textView);
-        //start diagnostic
-        startSlideshow();
-    }
-
-    void startSlideshow() {
-        //shuffle collection for
-        Collections.shuffle(mDataSet);
-        mProgressBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-    }
-/*animation
-* Animation fadeIn = new AlphaAnimation(0, 1);
-                fadeIn.setInterpolator(new DecelerateInterpolator()); //add this
-                fadeIn.setDuration(1000);
-
-                Animation fadeOut = new AlphaAnimation(1, 0);
-                fadeOut.setInterpolator(new AccelerateInterpolator()); //and this
-                fadeOut.setStartOffset(1000);
-                fadeOut.setDuration(1000);
-
-                AnimationSet animation = new AnimationSet(false); //change to false
-                animation.addAnimation(fadeIn);
-                animation.addAnimation(fadeOut);
-                mDescriptionTest.setAnimation(animation);*/
 }
