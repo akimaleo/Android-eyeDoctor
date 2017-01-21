@@ -59,11 +59,66 @@ public class DataCollection {
             data.get(i).setDescription(desk[i]);
             int plateNumberObject = Integer.parseInt(DataCollection.getInstance().getContext().getResources().getResourceEntryName((data.get(i)).getImageResource()).replace("plate", "").intern());
             Log.i("num", "" + plateNumberObject);
+            switch (i) {
+                case 0:
+                    data.get(i).setAnswer(new int[]{12, 0, 0});
+                    break;
+                case 1:
+                    data.get(i).setAnswer(new int[]{8, 3, 0});
+                    break;
+                case 2:
+                    data.get(i).setAnswer(new int[]{29, 70, 0});
+                    break;
+                case 3:
+                    data.get(i).setAnswer(new int[]{5, 2, 0});
+                    break;
+                case 4:
+                    data.get(i).setAnswer(new int[]{3, 5, 0});
+                    break;
+                case 5:
+                    data.get(i).setAnswer(new int[]{15, 17, 0});
+                    break;
+                case 6:
+                    data.get(i).setAnswer(new int[]{74, 21, 0});
+                    break;
+                case 7:
+                    data.get(i).setAnswer(new int[]{6, 0, 0});
+                    break;
+                case 8:
+                    data.get(i).setAnswer(new int[]{45, 0, 0});
+                    break;
+                case 9:
+                    data.get(i).setAnswer(new int[]{5, 0, 0});
+                    break;
+                case 10:
+                    data.get(i).setAnswer(new int[]{7, 0, 0});
+                    break;
+                case 11:
+                    data.get(i).setAnswer(new int[]{16, 0, 0});
+                    break;
+                case 12:
+                    data.get(i).setAnswer(new int[]{73, 0, 0});
+                    break;
+                case 13:
+                    data.get(i).setAnswer(new int[]{0, 5, 0});
+                    break;
+                case 14:
+                    data.get(i).setAnswer(new int[]{0, 45, 0});
+                    break;
+                case 15:
+                    data.get(i).setAnswer(new int[]{26, 2, 0});
+                    break;
+                case 16:
+                    data.get(i).setAnswer(new int[]{42, 2, 0});
+                    break;
+            }
         }
+
         return data;
     }
 
     public Context getContext() {
         return context;
     }
+
 }

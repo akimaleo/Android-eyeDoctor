@@ -5,8 +5,11 @@ package com.letit0or1.akimaleo.eyedoctor.entity;
  */
 
 public class DataItem implements Comparable {
+
     private String description;
     private int imageResource;
+
+    private int[] answer;// = new int[]{};
 
     public DataItem(String description, int imageResource) {
         this.description = description;
@@ -34,5 +37,13 @@ public class DataItem implements Comparable {
         int plateNumberObject = Integer.parseInt(DataCollection.getInstance().getContext().getResources().getResourceEntryName(((DataItem) o).getImageResource()).replace("plate", "").intern());
         int plateNumberThis = Integer.parseInt(DataCollection.getInstance().getContext().getResources().getResourceEntryName(imageResource).replace("plate", "").intern());
         return new Integer(plateNumberThis).compareTo(new Integer(plateNumberObject));
+    }
+
+    public void setAnswer(int[] i) {
+        answer = i;
+    }
+
+    public int[] getAnswer() {
+        return answer;
     }
 }

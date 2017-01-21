@@ -18,12 +18,55 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="info mthrfckr"
-        android:gravity="bottom"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/progressbar"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/line0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/first"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="first" />
+
+            <Button
+                android:id="@+id/second"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="second" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/third"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="thirs" />
+
+            <Button
+                android:id="@+id/fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="fourth" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
