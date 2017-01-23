@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.start_diagnostic).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.main_b).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //start diagnostic activity
