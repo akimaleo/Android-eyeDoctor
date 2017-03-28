@@ -1,14 +1,12 @@
-package com.letit0or1.akimaleo.eyedoctor.entity;
+package com.letit0or1.akimaleo.eyedoctor.colorblind.entity;
 
 import android.content.Context;
 import android.util.Log;
 
 import com.letit0or1.akimaleo.eyedoctor.R;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 //Class using for accessing data in application storage and structuring it not in

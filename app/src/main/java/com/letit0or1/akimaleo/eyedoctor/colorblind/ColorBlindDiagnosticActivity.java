@@ -1,23 +1,16 @@
-package com.letit0or1.akimaleo.eyedoctor;
+package com.letit0or1.akimaleo.eyedoctor.colorblind;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.letit0or1.akimaleo.eyedoctor.entity.DataCollection;
-import com.letit0or1.akimaleo.eyedoctor.entity.DataItem;
+import com.letit0or1.akimaleo.eyedoctor.R;
+import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataCollection;
+import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataItem;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,9 +24,7 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
     //image view and progressbar
     private SquareProgressBar mProgressBar;
     private TextView mDescriptionTest;
-    private int milliseconds = 5000;
     private int mCurrentSlide = 0;
-    private LinearLayout buttonLine0, buttonLine1;
     private Button first, second, third, fourth;
     private int fullBlindCount = 0, red_greenBlind = 0, normal = 0, fake = 0;
 
@@ -43,10 +34,9 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         //displaying layout
         setContentView(R.layout.activity_color_blind_diagnostic);
 
-        buttonLine0 = (LinearLayout) findViewById(R.id.line0);
-        buttonLine1 = (LinearLayout) findViewById(R.id.line1);
         //get data
         mDataSet = DataCollection.getInstance().getData();
+        Collections.shuffle(mDataSet);
         //init progressbar
         mProgressBar = (SquareProgressBar) findViewById(R.id.progressbar);
 //        mDescriptionTest = (TextView) findViewById(R.id.textView);
@@ -77,7 +67,7 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         btns.add(fourth);
 
         Collections.shuffle(btns);
-        btns.get(0).setText(right == 0 ? "Nothing" : right + "");
+        btns.get(0).setText(right == 0 ? getString(R.string.button_nothing) : right + "");
         btns.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,7 +118,7 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         }
         DataItem i = mDataSet.get(mCurrentSlide++);
         mProgressBar.setImage(i.getImageResource());
-        mProgressBar.setProgress(((float) (mCurrentSlide - 1) / mDataSet.size()) * 100);
+        mProgressBar.setProgress(((float) (mCurrentSlide) / mDataSet.size()) * 100);
         setButtons(i);
     }
 

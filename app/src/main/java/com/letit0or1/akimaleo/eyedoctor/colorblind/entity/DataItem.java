@@ -1,4 +1,4 @@
-package com.letit0or1.akimaleo.eyedoctor.entity;
+package com.letit0or1.akimaleo.eyedoctor.colorblind.entity;
 
 /**
  * Created by akimaleo on 15.01.17.

@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">eyeDoctor</string>
+    <string name="app_author">Yaroslav Movchan</string>
     <!--Информация взята с сайта http://infoglaza.ru/profilaktika/133-proverka-zreniya-na-daltonizm-onlajn-test-ishikhary-->
     <array name="diagnostic_data">
         <!--0-->
@@ -89,5 +90,14 @@
             спектра (дейтеранопия) различают 4 и, возможно, 2.
         </item>
     </array>
+
+    <!--COLOR BLIND DIAGNOSTIC-->
+    <string name="colorblind_title">Color blind</string>
+    <string name="colorblind_desc">Diagnostic</string>
+
+    <string name="button_nothing">Nothing</string>
+
+    <string name="amsler_title">Amsler grid</string>
+    <string name="amsler_desc">Test For Macular Degeneration</string>
 
 </resources>

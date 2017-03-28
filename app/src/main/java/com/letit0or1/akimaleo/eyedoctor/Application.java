@@ -1,6 +1,6 @@
 package com.letit0or1.akimaleo.eyedoctor;
 
-import com.letit0or1.akimaleo.eyedoctor.entity.DataCollection;
+import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataCollection;
 
 /**
  * Created by akimaleo on 15.01.17.

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.letit0or1.akimaleo.eyedoctor.entity.DataCollection;
+import com.letit0or1.akimaleo.eyedoctor.colorblind.ColorBlindDiagnosticActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.main_b).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.activity_color_blind_diagnostic).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //start diagnostic activity
