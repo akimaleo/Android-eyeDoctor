@@ -92,12 +92,31 @@
     </array>
 
     <!--COLOR BLIND DIAGNOSTIC-->
-    <string name="colorblind_title">Color blind</string>
+    <string name="colorblind_title">Color Blindness</string>
     <string name="colorblind_desc">Diagnostic</string>
 
     <string name="button_nothing">Nothing</string>
 
     <string name="amsler_title">Amsler grid</string>
     <string name="amsler_desc">Test For Macular Degeneration</string>
+    <string name="amsler_how_to">How to use</string>
+
+    <string name="amsler_guide">-Test your eyes under normal room lighting used for reading.
+\nWear eyeglasses you normally wear for reading (even if you wear only store-bought reading glasses.
+\nHold the Amsler grid approximately 14 to 16 inches from your eyes.
+\nTest each eye separately: Cup your hand over one eye while testing the other eye.
+\nKeep your eye focused on the dot in the center of the grid and answer these questions:
+
+\n• Do any of the lines in the grid appear wavy, blurred or distorted?
+\n• Do all the boxes in the grid look square and the same size?
+\n• Are there any "holes" (missing areas) or dark areas in the grid?
+\n• Can you see all corners and sides of the grid (while keeping your eye on the central dot)?
+Switch to the other eye and repeat.</string>
+    <string name="title_activity_amsler_grid">AmslerGrid</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

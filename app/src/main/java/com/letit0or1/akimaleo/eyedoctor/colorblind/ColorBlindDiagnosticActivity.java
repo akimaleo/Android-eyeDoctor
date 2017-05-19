@@ -1,12 +1,12 @@
 package com.letit0or1.akimaleo.eyedoctor.colorblind;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.letit0or1.akimaleo.eyedoctor.R;
 import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataCollection;
@@ -23,7 +23,6 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
     private ArrayList<DataItem> mDataSet;
     //image view and progressbar
     private SquareProgressBar mProgressBar;
-    private TextView mDescriptionTest;
     private int mCurrentSlide = 0;
     private Button first, second, third, fourth;
     private int fullBlindCount = 0, red_greenBlind = 0, normal = 0, fake = 0;
@@ -34,12 +33,22 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         //displaying layout
         setContentView(R.layout.activity_color_blind_diagnostic);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         //get data
         mDataSet = DataCollection.getInstance().getData();
         Collections.shuffle(mDataSet);
         //init progressbar
         mProgressBar = (SquareProgressBar) findViewById(R.id.progressbar);
-//        mDescriptionTest = (TextView) findViewById(R.id.textView);
 
         first = (Button) findViewById(R.id.first);
         second = (Button) findViewById(R.id.second);
@@ -106,7 +115,7 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
     }
 
     void nextImage() {
-        if (mCurrentSlide == mDataSet.size() - 1) {
+        if (mCurrentSlide == mDataSet.size()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("The result").setMessage(result()).setPositiveButton("ok", new DialogInterface.OnClickListener() {
                 @Override
@@ -118,15 +127,21 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         }
         DataItem i = mDataSet.get(mCurrentSlide++);
         mProgressBar.setImage(i.getImageResource());
-        mProgressBar.setProgress(((float) (mCurrentSlide) / mDataSet.size()) * 100);
+        mProgressBar.setProgress((((float) (mCurrentSlide)) / mDataSet.size() * 100) - 0.1f);
         setButtons(i);
     }
 
     private String result() {
+        int answersSum = fullBlindCount + red_greenBlind + normal + fake;
+        int percentage = (int) ((((float) normal) / ((float) answersSum))* 100) ;
         return "В ході діагностики було отримо такі результати:" +
-                "\n\tПри нормально зорі відповідей: " + normal +
-                "\n\tПри сліпоті в зеленому або червоно спектрі: " + red_greenBlind +
-                "\n\tПри повній кольоровій сліпоті: " + fullBlindCount +
-                "\n\tМоживих симуляцій: " + fake;
+                "\nВідповідей при нормальному зорі " + percentage + " %" +
+                (percentage < 98 ? "\nУ вас є підозри на патпалогію кольосприйняття" : "");
+
+//        return "В ході діагностики було отримо такі результати:" +
+//                "\n\tПри нормально зорі відповідей: " + normal +
+//                "\n\tПри сліпоті в зеленому або червоно спектрі: " + red_greenBlind +
+//                "\n\tПри повній кольоровій сліпоті: " + fullBlindCount +
+//                "\n\tМоживих симуляцій: " + fake;
     }
 }
