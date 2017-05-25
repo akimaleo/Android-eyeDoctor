@@ -136,7 +136,7 @@ public class ColorBlindDiagnosticActivity extends AppCompatActivity {
         int percentage = (int) ((((float) normal) / ((float) answersSum))* 100) ;
         return "В ході діагностики було отримо такі результати:" +
                 "\nВідповідей при нормальному зорі " + percentage + " %" +
-                (percentage < 98 ? "\nУ вас є підозри на патпалогію кольосприйняття" : "");
+                (percentage < 98 ? "\nУ вас є підозри на паталогію кольосприйняття" : "");
 
 //        return "В ході діагностики було отримо такі результати:" +
 //                "\n\tПри нормально зорі відповідей: " + normal +
