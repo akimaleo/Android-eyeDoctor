@@ -19,8 +19,7 @@
         <activity android:name=".colorblind.ColorBlindDiagnosticActivity" />
         <activity
             android:name=".amslergrid.AmslerGridActivity"
-            android:label="@string/title_activity_amsler_grid"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_amsler_grid"></activity>
     </application>
 
 </manifest>
