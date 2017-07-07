@@ -6,7 +6,8 @@ Human eye system diagnostic application.
 2 diagnostic tests for you)
 
 
-## Color blind diagnostic.<img src="https://pp.userapi.com/c836236/v836236952/4f3ad/WhevvI8ykT8.jpg" width="256"><img src="https://pp.userapi.com/c836236/v836236952/4f38f/82JFBrUkz_E.jpg" width="256">
+## Color blind diagnostic.
+<img src="https://pp.userapi.com/c836236/v836236952/4f3ad/WhevvI8ykT8.jpg" width="256"><img src="https://pp.userapi.com/c836236/v836236952/4f38f/82JFBrUkz_E.jpg" width="256">
 
 ## Amsler grid
 Macular Degeneration diagnostic
