@@ -2,7 +2,7 @@
 
 Human eye system diagnostic application.
 
-<img src="https://pp.userapi.com/c836236/v836236952/4f3c1/kblFmq0KZQ4.jpg" width="128">
+<img src="https://pp.userapi.com/c836236/v836236952/4f3c1/kblFmq0KZQ4.jpg" width="256">
 2 diagnostic tests for you)
 
 
