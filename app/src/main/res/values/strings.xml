@@ -113,11 +113,6 @@
 \n• Can you see all corners and sides of the grid (while keeping your eye on the central dot)?
 Switch to the other eye and repeat.</string>
     <string name="title_activity_amsler_grid">AmslerGrid</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="conclusion">After the test you got a result:\nAnswers with normal eye`s health</string>
     <string name="conclusion2">You are suspicious on color perception pathology</string>
