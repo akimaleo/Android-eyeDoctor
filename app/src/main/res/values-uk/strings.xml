@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">eyeDoctor</string>
+    <string name="app_author">Yaroslav Movchan\n Tetiana Korinenko</string>
+    <!--Информация взята с сайта http://infoglaza.ru/profilaktika/133-proverka-zreniya-na-daltonizm-onlajn-test-ishikhary-->
+
+    <!--COLOR BLIND DIAGNOSTIC-->
+    <string name="colorblind_title">Кольорова сліпота</string>
+    <string name="colorblind_desc">Діагностика</string>
+
+    <string name="button_nothing">Нічого</string>
+
+    <string name="amsler_title">Решітка Амслера</string>
+    <string name="amsler_desc">Тест на визначення макулодистрофії</string>
+    <string name="amsler_how_to">Как использовать</string>
+
+    <string name="amsler_guide">1. Наденьте очки или контактные линзы (если Вы их обычно носите).\n
+2. Расположите сетку перед собой на расстоянии 20-30 см.\n
+3. Прикройте 1 глаз.\n
+4. Сосредоточив взгляд на центральной точке, оцените остальную часть сетки.\n
+\t -Все ли линии сетки прямые и ровные?\n
+\t -Все ли квадраты решетки одинакового размера?\n
+\t -Нет ли зон, где рисунок искажается, затуманивается, обесцвечивается?\n
+5. Повторите тест для другого глаза.</string>
+    <string name="title_activity_amsler_grid">Решітка Амслера</string>
+
+    <string name="conclusion">Після проходження тесту ви отримали наступні результати:\nВідповіді при нормально зорі</string>
+    <string name="conclusion2">У вас є підозри на паталогию відшарування сітківки</string>
+</resources>

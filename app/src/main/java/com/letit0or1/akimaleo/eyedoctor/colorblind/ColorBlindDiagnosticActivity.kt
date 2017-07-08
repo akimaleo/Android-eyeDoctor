@@ -1,22 +1,15 @@
 package com.letit0or1.akimaleo.eyedoctor.colorblind
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.View
 import android.widget.Button
-
+import ch.halcyon.squareprogressbar.SquareProgressBar
 import com.letit0or1.akimaleo.eyedoctor.R
 import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataCollection
 import com.letit0or1.akimaleo.eyedoctor.colorblind.entity.DataItem
-
-import java.util.ArrayList
-import java.util.Collections
-import java.util.Random
-
-import ch.halcyon.squareprogressbar.SquareProgressBar
+import java.util.*
 
 class ColorBlindDiagnosticActivity : AppCompatActivity() {
     //Data collection
@@ -89,7 +82,7 @@ class ColorBlindDiagnosticActivity : AppCompatActivity() {
         if (right == 0)
             btns[2]?.text = Random().nextInt(85).toString() + ""
         else
-            btns[2]?.text = if (full == 0) "Nothing" else full.toString() + ""
+            btns[2]?.text = if (full == 0) getString(R.string.button_nothing) else full.toString() + ""
         btns[2]?.setOnClickListener {
             fullBlindCount++
             nextImage()
@@ -117,9 +110,11 @@ class ColorBlindDiagnosticActivity : AppCompatActivity() {
     private fun result(): String {
         val answersSum = fullBlindCount + red_greenBlind + normal + fake
         val percentage = (normal.toFloat() / answersSum.toFloat() * 100).toInt()
-        return "В ході діагностики було отримо такі результати:" +
-                "\nВідповідей при нормальному зорі " + percentage + " %" +
-                if (percentage < 98) "\nУ вас є підозри на паталогію кольосприйняття" else ""
+
+        val frst = getString(R.string.conclusion) + " " + percentage + "%\n"
+        val scnd = if (percentage < 98) String.format(getString(R.string.conclusion2), percentage) else "";
+
+        return frst + scnd
 
         //        return "В ході діагностики було отримо такі результати:" +
         //                "\n\tПри нормально зорі відповідей: " + normal +
