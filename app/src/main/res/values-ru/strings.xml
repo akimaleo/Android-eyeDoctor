@@ -25,5 +25,6 @@
     <string name="title_activity_amsler_grid">Решетка Амслера </string>
 
     <string name="conclusion">После прохождения теста было получено следуещее результаты:\nОтветы при нормальном зрении</string>
-    <string name="conclusion2">У вас есть подозрение на паталогию отслоения сетчатки</string>
+    <string name="conclusion2">У вас есть подозрение на паталогию восприятия цвета</string>
+    <string name="the_result">Результат</string>
 </resources>

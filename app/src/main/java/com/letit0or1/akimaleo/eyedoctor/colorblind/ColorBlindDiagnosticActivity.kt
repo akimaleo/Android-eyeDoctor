@@ -38,7 +38,7 @@ class ColorBlindDiagnosticActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
 
         //get data
-        mDataSet = DataCollection.getInstance().data
+        mDataSet = DataCollection.instance.data
         Collections.shuffle(mDataSet!!)
         //init progressbar
         mProgressBar = findViewById(R.id.progressbar) as SquareProgressBar
@@ -98,7 +98,7 @@ class ColorBlindDiagnosticActivity : AppCompatActivity() {
     internal fun nextImage() {
         if (mCurrentSlide == mDataSet!!.size) {
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("The result").setMessage(result()).setPositiveButton("ok") { dialogInterface, i -> finish() }.show()
+            builder.setTitle(getString(R.string.the_result)).setMessage(result()).setPositiveButton("ok") { dialogInterface, i -> finish() }.show()
             return
         }
         val i = mDataSet!![mCurrentSlide++]

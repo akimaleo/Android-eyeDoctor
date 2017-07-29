@@ -34,8 +34,8 @@ public class DataItem implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        int plateNumberObject = Integer.parseInt(DataCollection.getInstance().getContext().getResources().getResourceEntryName(((DataItem) o).getImageResource()).replace("plate", "").intern());
-        int plateNumberThis = Integer.parseInt(DataCollection.getInstance().getContext().getResources().getResourceEntryName(imageResource).replace("plate", "").intern());
+        int plateNumberObject = Integer.parseInt(DataCollection.Companion.getInstance().getContext().getResources().getResourceEntryName(((DataItem) o).getImageResource()).replace("plate", "").intern());
+        int plateNumberThis = Integer.parseInt(DataCollection.Companion.getInstance().getContext().getResources().getResourceEntryName(imageResource).replace("plate", "").intern());
         return new Integer(plateNumberThis).compareTo(new Integer(plateNumberObject));
     }
 

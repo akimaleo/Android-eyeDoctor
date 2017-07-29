@@ -25,5 +25,6 @@
     <string name="title_activity_amsler_grid">Решітка Амслера</string>
 
     <string name="conclusion">Після проходження тесту ви отримали наступні результати:\nВідповіді при нормально зорі</string>
-    <string name="conclusion2">У вас є підозри на паталогию відшарування сітківки</string>
+    <string name="conclusion2">У вас є підозри на паталогию спийняття кольорів</string>
+    <string name="the_result">Результат</string>
 </resources>

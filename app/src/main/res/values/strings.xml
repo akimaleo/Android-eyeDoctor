@@ -116,5 +116,6 @@ Switch to the other eye and repeat.</string>
 
     <string name="conclusion">After the test you got a result:\nAnswers with normal eye`s health</string>
     <string name="conclusion2">You are suspicious on color perception pathology</string>
+    <string name="the_result">The result</string>
 
 </resources>
